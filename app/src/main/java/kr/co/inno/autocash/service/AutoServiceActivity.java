@@ -78,8 +78,10 @@ public class AutoServiceActivity extends Service
         mInterstitialAd = new InterstitialAd(this);
 		mInterstitialAd.setAdUnitId("ca-app-pub-4092414235173954/5324149570");
 		audiomanager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-        if(PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_AD_STATUS, "N").equals("Y")){
-            addInterstitialView();
+        if(PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, false) == true) {
+            if(PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_AD_STATUS, "N").equals("Y")){
+                addInterstitialView();
+            }
         }
         Log.d("AutoCash", "AutoServiceActivity : Service is Created");
     }
@@ -124,10 +126,10 @@ public class AutoServiceActivity extends Service
         Log.i("dsu", "auto_count : " + auto_count + "\nad_view : " + PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, false) + "\nad_time : " + Integer.parseInt(PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_AD_TIME, "250")));
         if(auto_count == Integer.parseInt(PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_AD_TIME, "150"))){
             auto_count = 1;
-            if(!PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_ISSUBSCRIBED, App.isSubscribed).equals("true")){
-                    if(PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_AD_STATUS, "N").equals("Y")){
-                        addInterstitialView();
-                    }
+            if(PreferenceUtil.getBooleanSharedData(context, PreferenceUtil.PREF_AD_VIEW, false) == true) {
+                if(PreferenceUtil.getStringSharedData(context, PreferenceUtil.PREF_AD_STATUS, "N").equals("Y")){
+                    addInterstitialView();
+                }
             }
         }
         callingCount++;

@@ -8,8 +8,8 @@ android {
         applicationId 'ccm.gospel.misook'
         minSdkVersion 15
         targetSdkVersion 27
-        versionCode 14
-        versionName "1.1.4"
+        versionCode 15
+        versionName "1.1.5"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
