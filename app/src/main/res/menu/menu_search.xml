@@ -13,6 +13,7 @@
                 android:checkableBehavior="single">
                 <item
                     android:id="@+id/menu_filter_all"
+                    android:checked="true"
                     android:title="@string/all"/>
                 <item
                     android:id="@+id/menu_filter_video"
@@ -22,7 +23,6 @@
                     android:title="@string/channel"/>
                 <item
                     android:id="@+id/menu_filter_playlist"
-                    android:checked="true"
                     android:title="@string/playlist"/>
             </group>
         </menu>

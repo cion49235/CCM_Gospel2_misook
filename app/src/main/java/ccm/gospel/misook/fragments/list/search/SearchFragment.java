@@ -91,7 +91,7 @@ public class SearchFragment
 
     @State
     protected int filterItemCheckedId = -1;
-    private SearchEngine.Filter filter = SearchEngine.Filter.PLAYLIST;
+    private SearchEngine.Filter filter = SearchEngine.Filter.ANY;
 
     @State
     protected int serviceId = Constants.NO_SERVICE_ID;

@@ -83,7 +83,7 @@ public class IntroActivity extends AppCompatActivity {
         protected String doInBackground(String... params) {
             String sTag;
             try{
-                String str = "http://cion49235.cafe24.com/cion49235/ccmgospel_misook/ad_status.php";
+                String str = "http://cion49235.cafe24.com/cion49235/ccmgospel3_misook/ad_status.php";
                 localHttpURLConnection = (HttpURLConnection)new URL(str).openConnection();
                 localHttpURLConnection.setFollowRedirects(true);
                 localHttpURLConnection.setConnectTimeout(15000);
